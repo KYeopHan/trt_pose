@@ -24,7 +24,7 @@ class DrawObjects(object):
                     peak = normalized_peaks[0][j][k]
                     x = round(float(peak[1]) * width)
                     y = round(float(peak[0]) * height)
-                    cv2.circle(image, (x, y), 3, color, 2)
+                    cv2.circle(image, (int(x), int(y)), 3, color, 2)
 
             for k in range(K):
                 c_a = topology[k][2]
@@ -36,4 +36,4 @@ class DrawObjects(object):
                     y0 = round(float(peak0[0]) * height)
                     x1 = round(float(peak1[1]) * width)
                     y1 = round(float(peak1[0]) * height)
-                    cv2.line(image, (x0, y0), (x1, y1), color, 2)
+                    cv2.line(image, (int(x0), int(y0)), (int(x1), int(y1)), color, 2)
